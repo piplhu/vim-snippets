@@ -4,24 +4,17 @@ endif
 let b:done_vimsnippets = 1
 
 " Some variables need default value
-let s:has_git = executable('git')
-
-if !exists("g:snips_author") && s:has_git
-    let g:snips_author = trim(system('command git config --global user.name'))
-else
+if !exists("g:snips_author")
     let g:snips_author = "yourname"
 endif
 
-if !exists("g:snips_email") && s:has_git
-    let g:snips_email = trim(system('command git config --global user.email'))
-else
+if !exists("g:snips_email")
     let g:snips_email = "yourname@email.com"
 endif
 
 if !exists("g:snips_github")
-    let g:snips_github = "https://github.com/" . g:snips_author
+    let g:snips_github = "https://github.com/yourname"
 endif
-
 
 " Expanding the path is not needed on Vim 7.4
 if &cp || version >= 704
